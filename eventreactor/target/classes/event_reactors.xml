@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName" >
+
+
+     <!--事件处理器1-->
+    <bean id="baseEvent" class="com.taobao.ju.item.eventreactor.example.BaseEvent">
+    </bean>
+    <bean id="eventHandler" class="com.taobao.ju.item.eventreactor.example.BaseEventHandler">
+
+    </bean>
+    <bean id="reactor" class="com.taobao.ju.item.eventreactor.core.Reactor">
+        <property name="id" value="1"/>
+        <property name="event" ref="baseEvent"/>
+        <property name="eventHandler" ref="eventHandler"/>
+    </bean>
+
+
+    <!--事件处理器2-->
+    <bean id="baseEvent2" class="com.taobao.ju.item.eventreactor.example.BaseEvent2">
+    </bean>
+    <bean id="eventHandler2" class="com.taobao.ju.item.eventreactor.example.BaseEvent2Handler">
+
+    </bean>
+    <bean id="reactor2" class="com.taobao.ju.item.eventreactor.core.Reactor">
+        <property name="id" value="2"/>
+        <property name="event" ref="baseEvent2"/>
+        <property name="eventHandler" ref="eventHandler2"/>
+    </bean>
+
+
+
+
+</beans>

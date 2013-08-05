@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+
+
+
+
+
+
+
+    <appender name="xmlParseAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${eventreactor.logger.root}/xml_parse.log" />
+        <param name="append" value="true" />
+        <param name="encoding" value="GBK" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{2} - %m%n" />
+        </layout>
+    </appender>
+
+
+
+    <logger name="xmlParseLogger" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="xmlParseAppender"/>
+    </logger>
+
+
+
+
+
+
+
+
+</log4j:configuration>
